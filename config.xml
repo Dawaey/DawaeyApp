@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="707000" id="com.brilliantapp.dawaey" version="7.7.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://phonegap.com/ns/1.0">
+<widget versionCode="10" id="com.dawaey" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://phonegap.com/ns/1.0">
     <name>Dawaey</name>
     <description>Top Updated Drug Index</description>
     <author email="drusama2@gmail.com" href="https://microsmsm.github.io/">Osama Soliman</author>
