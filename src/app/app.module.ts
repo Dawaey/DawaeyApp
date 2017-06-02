@@ -14,6 +14,14 @@ import { DrugsService } from '../providers/drugs-service'
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { OneSignal } from '@ionic-native/onesignal';
 
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '8600d6dc'
+  }
+};
+
 
 
 @NgModule({
@@ -23,7 +31,8 @@ import { OneSignal } from '@ionic-native/onesignal';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
