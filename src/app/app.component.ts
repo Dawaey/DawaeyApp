@@ -3,12 +3,6 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Main } from '../pages/main/main';
-import { InteractionsPage } from '../pages/interactions/interactions';
-import { PartenersPage } from '../pages/parteners/parteners';
-import { SponsorsPage } from '../pages/sponsors/sponsors';
-import { AboutPage } from '../pages/about/about';
-
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 import { OneSignal } from '@ionic-native/onesignal';
 
@@ -22,18 +16,18 @@ export class MyApp {
 
   rootPage: any = 'drugs';
 
-  pages: Array<{ title: string, component: any, icon: string, url: string }>;
+  pages: Array<{ title: string, icon: string, url: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private ga: GoogleAnalytics, private oneSignal: OneSignal) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Drug Search', component: Main, icon: "home", url: "drugs" },
-      { title: 'Drug Interactions', component: InteractionsPage, icon: "finger-print", url: "interactions" },
-      { title: 'Parteners', component: PartenersPage, icon: "people", url: "parteners" },
-      { title: 'Sponsors', component: SponsorsPage, icon: "cash", url: "sponsors" },
-      { title: 'About', component: AboutPage, icon: "bug", url: "about" }
+      { title: 'Drug Search', icon: "home", url: "drugs" },
+      { title: 'Drug Interactions', icon: "finger-print", url: "interactions" },
+      { title: 'Partners', icon: "people", url: "partners" },
+      { title: 'Sponsors', icon: "cash", url: "sponsors" },
+      { title: 'About', icon: "bug", url: "about" }
     ];
 
   }
@@ -44,7 +38,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       //this.splashScreen.hide();
-      if ((<any>window).cordova) {
+      if (this.platform.is('cordova')) {
         //start getting analytics
         this.ga.startTrackerWithId('UA-88642709-1')
           .then(() => {

@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="darker">
     <ion-title *ngIf="drug">
       {{ drug.tradename }}
     </ion-title>
@@ -15,23 +15,23 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content class="drug-screen">
 
   <ion-card>
 
     <ion-card-content *ngIf="drug">
-      <img src="http://dawaey.com/drug-pic/{{drug.id}}.jpg"/>
-      <h3 color="primary">Tradename :</h3>
+      <img class="drug-img" src="http://dawaey.com/drug-pic/{{drug.id}}.jpg"/>
+      <h3 class="title">Tradename :</h3>
       <h1>{{drug.tradename}}</h1>
-      <h3 color="primary">Active Ingredient(s) :</h3>
+      <h3 class="title">Active Ingredient(s) :</h3>
       <h2>{{drug.activeingredient}}</h2>
-      <h3 color="primary">Contains :</h3>
-      {{drug.howmany}} {{drug.form}}
-      <h3 color="primary">Price :</h3>
-      <h2 class="price">{{drug.price}} EGP</h2>
-      <h3 color="primary">Main group: </h3>
+      <h3 class="title">Contains :</h3>
+      {{drug.howmany}} <strong>{{drug.form}}</strong>
+      <h3 class="title">Price :</h3>
+      <h2 class="price"><strong>{{drug.price}} EGP</strong></h2>
+      <h3 class="title">Main group: </h3>
       {{drug.maingp}}
-      <h3 color="primary">Company :</h3>
+      <h3 class="title">Company :</h3>
       {{drug.company}}
     </ion-card-content>
     
@@ -40,7 +40,7 @@
 
 
   </ion-card>
-  <a *ngIf="drug" style="color:red;float:right;padding-right:10px;" href="mailto:osama@dawaey.com?subject=Correcting {{drug.tradename}} information">Report a correction</a>
+  <a *ngIf="drug" style="color:brown;float:right;padding-right:10px;" href="mailto:osama@dawaey.com?subject=Correcting {{drug.tradename}} information">Report a correction</a>
 
 
   <ion-item-group *ngIf="drug">
@@ -53,7 +53,7 @@
   <ion-item-group *ngIf="similars">
     <ion-item-divider color="light">Similars :</ion-item-divider>
     <ion-item *ngFor="let similar of similars" (click)="openDrug(similar)">
-      {{similar.tradename}} <span style="color:red;float:right;">{{similar.price}} EGP</span>
+      {{similar.tradename}} <span class="price" style="float:right;">{{similar.price}} EGP</span>
     </ion-item>
 
   </ion-item-group>

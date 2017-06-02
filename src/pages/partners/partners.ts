@@ -3,14 +3,14 @@ import { NavController, NavParams, IonicPage } from 'ionic-angular';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
 
 @IonicPage({
-  name:'parteners',
-  segment: 'parteners'
+  name:'partners',
+  segment: 'partners'
 })
 @Component({
-  selector: 'page-parteners',
-  templateUrl: 'parteners.html'
+  selector: 'page-partners',
+  templateUrl: 'partners.html'
 })
-export class PartenersPage {
+export class PartnersPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,private ga: GoogleAnalytics) {}
 
